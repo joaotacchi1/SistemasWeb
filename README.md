@@ -13,8 +13,8 @@ Este projeto terá as seguintes funcionalidades:
   <li>Caso o calouro já tenha começado a tarefa, deve ser possível passar a tarefa para "em andamento"</li>
 </ul>
 
-4. Restrições
+3. Restrições
 Neste trabalho não serão considerados o dia e hora que o calouro pegou a tarefa. O sistema de login é apenas um meio para saber qual usuário está lançando as tarefas, mas não irá fazer discrepância entre níveis de login (por exemplo, todos as pessoas que tiverem acesso ao sistema poderam mexer em todas as funcionalidades dele). Além disso, o sistema não contará com filtros para tarefas repetidas, uma vez que podem ser criadas as mesmas tarefas mais de uma vez 
 
-5. Protótipo
+4. Protótipo
 Protótipos para as páginas de login, inserção de tarefas e exibição de quais tarefas já existem foram elaborados, e podem ser encontrados em https://www.figma.com/design/zgKlS0zqUujgVEA5yQfaZs/Sistemas-web?node-id=0-1&t=aOKnUUY9OoR75d7Z-1. Lembrando que este é apenas um protótipo e pode sofrer alterações durante a execução do trabalho, tanto no seu protótipo quanto nas suas funcionalidades e restrições
