@@ -2,7 +2,7 @@ CSI477 - Proposta de Trabalho Final
 Discente: João Vitor Tacchi Martins Lanna - 20.2.8088
 
 1. Tema
-O trabalho final tem como tema o desenvolvimento de um sistema em que faça o controle das tarefas que devem ser feitas na casa por calouros que acabaram de entrar em uma república estudantil. O objetivo desse tema é ter um controle mais fácil de quais tarefas precisam ser feitas, quando foram feitas, por quem foi feita (caso haja mais de um calouro). Considerando que a república já tenha a utilização de um quadro kanbam (de forma física), esse projeto também tem o objetivo de simular um quadro kanbam de maneira simples e tecnológica, mostrando uma tabela com as tarefas que devem ser feitas, quais tarefas já foram feitas, se está em andamento, entre outras funcionalidades
+<p>O trabalho final tem como tema o desenvolvimento de um sistema em que faça o controle das tarefas que devem ser feitas na casa por calouros que acabaram de entrar em uma república estudantil. O objetivo desse tema é ter um controle mais fácil de quais tarefas precisam ser feitas, quando foram feitas, por quem foi feita (caso haja mais de um calouro). Considerando que a república já tenha a utilização de um quadro kanbam (de forma física), esse projeto também tem o objetivo de simular um quadro kanbam de maneira simples e tecnológica, mostrando uma tabela com as tarefas que devem ser feitas, quais tarefas já foram feitas, se está em andamento, entre outras funcionalidades</p>
 
 2. Escopo
 Este projeto terá as seguintes funcionalidades:
