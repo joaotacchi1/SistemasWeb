@@ -15,7 +15,7 @@ const Login: React.FC = () => {
         password,
       });
       if (response.data.success) {
-        navigate('/tasks');
+        navigate('/tasks', { state: { username: response.data.username } });
       }
     } catch (error) {
       alert('Erro ao fazer login');

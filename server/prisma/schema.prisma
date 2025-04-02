@@ -18,12 +18,12 @@ model User {
 }
 
 model Task {
-  id          Int      @id @default(autoincrement())
-  description String
-  deadline    DateTime
-  assignedTo  String
-  observation String
-  status      String   @default("Para fazer") // "Para fazer", "Em andamento", "Finalizado"
-  userId      Int
-  user        User     @relation(fields: [userId], references: [id])
+  id           Int      @id @default(autoincrement())
+  description  String
+  deadline     DateTime
+  assignedTo   String
+  observation  String
+  status       String   @default("to_do") // "A fazer", "Em andamento", "Finalizado"
+  userUsername String
+  user         User     @relation(fields: [userUsername], references: [username])
 }

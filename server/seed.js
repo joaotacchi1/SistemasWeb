@@ -1,52 +1,58 @@
-const { PrismaClient } = require('@prisma/client');
-const bcrypt = require('bcrypt');
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-async function seed() {
-    await prisma.user.deleteMany();
-  // Criar usuário
-  const user = await prisma.user.create({
-    data: {
-      username: 'admin',
-      password: '123456',
-    },
-  });
+async function seedWithEncryption() {
+  await prisma.task.deleteMany();
+  await prisma.user.deleteMany();
 
-  // Inserir tarefas
-  await prisma.task.createMany({
+  const user = await prisma.user.createManyAndReturn({
     data: [
       {
-        description: 'Lavar a louça',
-        deadline: new Date('2025-04-05'),
-        assignedTo: 'João',
-        observation: 'Usar detergente neutro',
-        status: 'to_do',
-        userId: user.id,
+        username: "admin",
+        password: "123456",
       },
       {
-        description: 'Limpar o banheiro',
-        deadline: new Date('2025-04-07'),
-        assignedTo: 'Maria',
-        status: 'in_progress',
-        userId: user.id,
-      },
-      {
-        description: 'Varrer a sala',
-        deadline: new Date('2025-04-03'),
-        assignedTo: 'Pedro',
-        observation: 'Feito na semana passada',
-        status: 'done',
-        userId: user.id,
+        username: "sadia",
+        password: "123",
       },
     ],
   });
 
-  console.log('Usuário e tarefas criados com sucesso!');
+  await prisma.task.createMany({
+    data: [
+      {
+        description: "Lavar a louça",
+        deadline: new Date("2025-04-05"),
+        assignedTo: "João",
+        observation: "Usar detergente",
+        status: "to_do",
+        userUsername: user[0].username,
+      },
+      {
+        description: "Limpar o banheiro",
+        deadline: new Date("2025-04-07"),
+        assignedTo: "Maria",
+        observation: "",
+        status: "in_progress",
+        userUsername: user[1].username,
+      },
+      {
+        description: "Varrer a sala",
+        deadline: new Date("2025-04-03"),
+        assignedTo: "Pedro",
+        observation: "Feito na semana passada",
+        status: "done",
+        userUsername: user[1].username,
+      },
+    ],
+  });
+
+  console.log("Usuário e tarefas criados!");
   await prisma.$disconnect();
 }
 
-seed().catch((e) => {
+seedWithEncryption().catch((e) => {
   console.error(e);
   process.exit(1);
 });

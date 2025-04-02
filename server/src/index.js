@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
 const { PrismaClient } = require('@prisma/client');
 
 const app = express();
@@ -13,10 +12,8 @@ app.use(express.json());
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   const user = await prisma.user.findUnique({ where: { username } });
-  
   if (user && await password === user.password) {
-    // Se a senha estiver correta, retorne o ID do usuário) {
-    res.json({ success: true, userId: user.id });
+    res.json({ success: true, username: user.username });
   } else {
     res.status(401).json({ success: false, message: 'Credenciais inválidas' });
   }
@@ -29,27 +26,32 @@ app.get('/tasks', async (req, res) => {
 });
 
 app.post('/tasks', async (req, res) => {
-  const { description, deadline, assignedTo, observation, userId } = req.body;
+  const { description, deadline, assignedTo, observation, userUsername } = req.body;
   const task = await prisma.task.create({
     data: {
       description,
       deadline: new Date(deadline),
       assignedTo,
       observation,
-      userId
-    }
+      userUsername,
+    },
   });
   res.json(task);
 });
 
 app.put('/tasks/:id', async (req, res) => {
   const { id } = req.params;
-  const { description, deadline, assignedTo, observation, status } = req.body;
-  const task = await prisma.task.update({
-    where: { id: parseInt(id) },
-    data: { description, deadline: new Date(deadline), assignedTo, observation, status }
-  });
-  res.json(task);
+  const { status } = req.body; // Apenas status é necessário
+  try {
+    const task = await prisma.task.update({
+      where: { id: parseInt(id) },
+      data: { status }, // Atualiza apenas o status
+    });
+    res.json(task);
+  } catch (error) {
+    console.error('Erro ao atualizar tarefa:', error);
+    res.status(500).json({ error: 'Erro ao atualizar tarefa' });
+  }
 });
 
 app.delete('/tasks/:id', async (req, res) => {
