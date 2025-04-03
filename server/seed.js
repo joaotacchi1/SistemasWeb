@@ -9,7 +9,7 @@ async function seedWithEncryption() {
   const user = await prisma.user.createManyAndReturn({
     data: [
       {
-        username: "admin",
+        username: "fejao",
         password: "123456",
       },
       {

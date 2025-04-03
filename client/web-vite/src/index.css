@@ -1,46 +1,304 @@
-.tasks-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Zerar margens padrão do body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-form {
+/* Estilo geral da página de login */
+.login-page {
+  background-color: #1c2526;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-input, button {
-  padding: 8px;
-}
-
-.kanban {
-  display: flex;
-  gap: 20px;
-}
-
-.kanban > div {
-  flex: 1;
-  background: #f0f0f0;
-  padding: 10px;
-}
-
-.task-card {
-  background: white;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-}
-
+/* Estilo da caixa de login */
 .login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 20px;
-  text-align: center;
+  background-color: #2e3b3e;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #f5c518;
+  width: 300px;
+  text-align: left;
+  font-family: 'Cinzel', serif;
 }
 
+/* Estilo do formulário de login */
 .login-container form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+}
+
+/* Estilo dos rótulos de login */
+.login-container label {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+}
+
+/* Estilo dos campos de entrada de login */
+.login-container input {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  font-family: 'Cinzel', serif;
+}
+
+/* Estilo dos botões de login */
+.login-container button {
+  background-color: #f5c518;
+  color: #1c2526;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Cinzel', serif;
+}
+
+.login-container button:hover {
+  background-color: #d4a017;
+}
+
+/* Estilo geral da página de cadastro */
+.register-page {
+  background-color: #1c2526;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Estilo da caixa de cadastro */
+.register-container {
+  background-color: #2e3b3e;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #f5c518;
+  width: 300px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+}
+
+/* Estilo do título da página de cadastro */
+.register-container h2 {
+  color: #f5c518;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Estilo do formulário de cadastro */
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilo dos rótulos de cadastro */
+.register-container label {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Estilo dos campos de entrada de cadastro */
+.register-container input {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  font-family: 'Cinzel', serif;
+}
+
+/* Estilo dos botões de cadastro */
+.register-container button {
+  background-color: #f5c518;
+  color: #1c2526;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Cinzel', serif;
+}
+
+.register-container button:hover {
+  background-color: #d4a017;
+}
+
+/* Estilo geral da página de tarefas */
+.tasks-page {
+  background-color: #1c2526;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* Estilo do contêiner de tarefas */
+.tasks-container {
+  background-color: #2e3b3e;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #f5c518;
+  width: 90%;
+  max-width: 1200px;
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+}
+
+/* Estilo da foto da república */
+.republica-photo {
+  display: block;
+  margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
+  width: 200px; /* Aumenta a largura */
+  height: 200px; /* Aumenta a altura */
+  object-fit: contain; /* Garante que a imagem não seja cortada, mantendo as proporções */
+  border-radius: 15px; /* Bordas arredondadas */
+  border: 2px solid #f5c518; /* Borda amarela */
+}
+
+/* Estilo do título */
+.tasks-container h2 {
+  text-align: center;
+  color: #f5c518;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Estilo do formulário de tarefas */
+.tasks-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Estilo dos rótulos do formulário */
+.tasks-container label {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Estilo dos campos de entrada do formulário */
+.tasks-container input {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  font-family: 'Cinzel', serif;
+}
+
+/* Estilo do botão do formulário */
+.tasks-container button {
+  background-color: #f5c518;
+  color: #1c2526;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Cinzel', serif;
+}
+
+.tasks-container button:hover {
+  background-color: #d4a017;
+}
+
+/* Estilo do quadro Kanban */
+.kanban {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilo das colunas do Kanban */
+.kanban-column {
+  flex: 1;
+  min-width: 250px;
+  background-color: #2e3b3e;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #f5c518;
+}
+
+/* Estilo dos títulos das colunas */
+.kanban-column h3 {
+  color: #f5c518;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Estilo dos cartões de tarefa */
+.task-card {
+  background-color: #1c2526;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #f5c518;
+  color: #ffffff;
+}
+
+/* Estilo do texto dentro dos cartões */
+.task-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Estilo dos botões dentro dos cartões */
+.task-card button {
+  background-color: #f5c518;
+  color: #1c2526;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-family: 'Cinzel', serif;
+}
+
+.task-card button:hover {
+  background-color: #d4a017;
+}
+
+/* Estilo do pingômetro */
+.pingometer {
+  color: #ff0000;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 5px 0;
 }

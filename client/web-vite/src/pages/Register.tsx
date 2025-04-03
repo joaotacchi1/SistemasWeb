@@ -2,36 +2,39 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login', {
+      const response = await axios.post('http://localhost:3001/register', {
         username,
         password,
       });
       if (response.data.success) {
-        navigate('/tasks', { state: { username } });
+        alert('Usuário cadastrado com sucesso!');
+        navigate('/'); // Redireciona para a tela de login
       }
     } catch (error) {
-      alert('Erro ao fazer login');
+      alert('Erro ao cadastrar usuário. Talvez o username já exista.');
     }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <form onSubmit={handleLogin}>
+    <div className="register-page">
+      <div className="register-container">
+        <h2>Cadastre-se</h2>
+        <form onSubmit={handleRegister}>
           <label htmlFor="username">Login</label>
           <input
             id="username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            required
           />
           <label htmlFor="password">Password</label>
           <input
@@ -39,10 +42,11 @@ const Login: React.FC = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
-          <button type="submit">Entrar</button>
-          <button type="button" onClick={() => navigate('/register')}>
-            Cadastre-se
+          <button type="submit">Cadastrar</button>
+          <button type="button" onClick={() => navigate('/')}>
+            Voltar ao Login
           </button>
         </form>
       </div>
@@ -50,4 +54,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
