@@ -33,7 +33,7 @@ const Register: React.FC = () => {
             id="username"
             type="text"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value.toUpperCase())}
             required
           />
           <label htmlFor="password">Password</label>
@@ -41,7 +41,7 @@ const Register: React.FC = () => {
             id="password"
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value.toUpperCase())}
             required
           />
           <button type="submit">Cadastrar</button>

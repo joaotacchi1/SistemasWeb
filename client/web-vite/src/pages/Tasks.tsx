@@ -42,7 +42,7 @@ const Tasks: React.FC = () => {
 
   useEffect(() => {
     fetchTasks();
-    // Atualiza o pingômetro a cada 5 minutos (já que o valor muda por dia)
+    // Atualiza o pingômetro a cada 5 minutos
     const interval = setInterval(fetchTasks, 5 * 60 * 1000); // 5 minutos
     return () => clearInterval(interval);
   }, []);

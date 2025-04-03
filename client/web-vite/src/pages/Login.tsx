@@ -31,14 +31,14 @@ const Login: React.FC = () => {
             id="username"
             type="text"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value.toUpperCase())}
           />
           <label htmlFor="password">Password</label>
           <input
             id="password"
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value.toUpperCase())}
           />
           <button type="submit">Entrar</button>
           <button type="button" onClick={() => navigate('/register')}>
