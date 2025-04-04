@@ -19,3 +19,23 @@ Discente: João Vitor Tacchi Martins Lanna - 20.2.8088
 
 4. Protótipo
 <p>Protótipos para as páginas de login, inserção de tarefas e exibição de quais tarefas já existem foram elaborados na ferramenta de prototipagem do Figma, e podem ser encontrados nesse <a href='https://www.figma.com/design/zgKlS0zqUujgVEA5yQfaZs/Sistemas-web?node-id=0-1&t=aOKnUUY9OoR75d7Z-1'>link</a>. Lembrando que este é apenas um protótipo e pode sofrer alterações durante a execução do trabalho, tanto no seu protótipo quanto nas suas funcionalidades e restrições</p>
+
+5. Inicialização
+<p>Para fazer a inicializição do projeto, devemos seguir os seguintes passos</p>
+<ol>
+  <li>Abra 2 terminais na sua IDE (recomendado utilização do VSCode para maior facilidade)</li>
+  <li>Em um terminal:</li>
+    <ul>
+      <li>Rode cd server</li>
+      <li>Rode npm install para baixar as dependências</li>
+      <li>Rode npx prisma migrate dev --name init para iniciar o banco de dados</li>
+      <li>Rode npm run dev para iniciar o back-end</li>
+    </ul>
+  <li>No segundo terminal</li>
+    <ul>
+      <li>Rode cd cliente</li>
+      <li>Rode cd web-vite</li>
+      <li>Rode npm install para instalar dependências</li>
+      <li>Rode npm run dev para iniciar o front-end</li>
+    </ul>
+</ol>
